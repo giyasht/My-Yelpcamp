@@ -24,8 +24,7 @@ var commentRoutes = require("./routes/comments"),
   indexRoutes = require("./routes/index");
 
 mongoose.connect(
-  "mongodb+srv://yashg:Yash@dbatlas123@cluster0.vbfy5.mongodb.net/yelpcamp?retryWrites=true&w=majority" ||
-    "mongodb://localhost/yelp_camp_trial",
+  process.env.DATABASEURL || "mongodb://localhost/yelp_camp_trial",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -74,11 +73,12 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 app.get("/users/:user_id", function (req, res) {
   User.findById(req.params.user_id, function (err, foundUser) {
     if (err) {
-      console.log(err);
+      res.flash("error", "User not found, redirected to campgrounds page!");
+      res.redirect("/campgrounds");
     } else {
       Campground.find({}, function (err, allcampgrounds) {
         if (err) {
-          console.log(err);
+          res.send("<h4>No campgrounds found for this user</h4>");
         } else {
           res.render("userprofile", {
             user: foundUser,
