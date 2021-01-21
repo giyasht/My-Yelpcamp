@@ -18,8 +18,8 @@
 
 <br/>
 
-- 🔭 This is the First Project of **Web Development** named ***CHITCHAT***
-- 🌱 We currently focusing on **Backend development** in **Django**
+- 🔭 This is the First Project of **BAck End Development** named ***Yelpcamp***
+- 🌱 I am currently focusing on **Backend development** in **NodeJS**
 - ⚡ Fun fact: **Results motivate u to work even Harder**
 
 <br/>
@@ -28,7 +28,7 @@
 <br/>
 
 <p align="center">
-  <img src="https://gpvc.arturio.dev/yash1256" alt="profile views"> •  
+  <img src="https://gpvc.arturio.dev/giyasht" alt="profile views"> •  
   <img alt="GitHub followers" src="https://img.shields.io/github/followers/giyasht?label=Followers&style=social"> •   
   <img src="https://img.shields.io/github/stars/giyasht?label=Stars" alt="Total Stars">
 </p>
@@ -66,11 +66,14 @@
 <a href="https://github.com/giyasht">
   <img align="center" height="195px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yashi12&text_color=FFFFFF&bg_color=000000&title_color=94b4a4&langs_count=15&layout=compact" />
 </a>
-Other contributors:-
-<a href = "https://github.com/priyanshu-678"></a>
 <br>
 <br>
-
+<a href="https://github.com/priyanshu-678">
+  <img align="center" src="https://github-readme-stats.vercel.app/api?username=priyanshu-678&show_icons=true&hide_border=true&title_color=94b4a4&amp&icon_color=FFFFFF&amp&text_color=FFFFFF&amp&bg_color=000000&count_private=true&include_all_commits=true"/>
+</a>
+<a href="https://github.com/priyanshu-678">
+  <img align="center" height="195px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=yashi12&text_color=FFFFFF&bg_color=000000&title_color=94b4a4&langs_count=15&layout=compact" />
+</a>
 <div align="center">
 
 ### Show some ❤️ by starring some of the repositories!
