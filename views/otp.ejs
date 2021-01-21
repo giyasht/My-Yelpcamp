@@ -1,0 +1,50 @@
+<%- include ('partials/header.ejs') %>
+<div class="container">
+  <div class="row">
+    <h1 style="text-align: center; margin: 50px auto">OTP Authentication</h1>
+  </div>
+  <div style="width: 30%; margin: auto; text-align: center">
+    <form action="/verify" method="post">
+      <div class="form-group">
+        <input
+          class="form-control"
+          type="text"
+          placeholder="Enter OTP"
+          name="otp"
+          required
+        />
+        <div class="form-group" style="margin-top: 30px;">
+          <button class="btn btn-lg btn-primary btn-block">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <form action="/resend" method="post">
+    <div style="width: 30%; margin: auto; text-align: center">
+      <a class="btn btn-warning" href="/resend">Resend OTP</a>
+    </div>
+  </form>
+</div>
+
+<!-- <h1 class="brand"><span>Welcome User </span> Sign-up</h1>
+      <div class="contact">
+        <form method="POST" action="verify">
+          <p>
+            <label>Enter otp</label>
+            <input type="text" name="otp" required>
+          </p>
+          
+          <p class="full">
+            <button type="submit">Submit</button>
+          </p>
+
+        </form>
+        <br>
+        <form method="POST" action="resend">
+          <p class="full">
+            <button type="submit">resend otp</button>
+          </p>
+          
+      </div>
+  </div> -->
+<%- include ('partials/footer.ejs') %>

@@ -1,0 +1,18 @@
+.thumbnail .img-responsive{
+    width: 100%;
+}
+.thumbnail{
+    padding-top:3%;
+}
+
+.thumbnail .caption-full{
+    padding: 9px;
+} 
+
+#delete-form{
+    display: inline;
+}
+
+#flash{
+    margin-top: 15px;
+}
