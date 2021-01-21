@@ -93,7 +93,7 @@ router.post("/resend", function (req, res) {
   var mailOptions = {
     to: email,
     subject: "OTP for YelpCamp",
-    html:"<h4>Otp for registration is </h4>"+<br>+"<em>" + otp + "</em>",
+    html:"<h4>Otp for registration is </h4><br><em>" + otp + "</em>",
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
