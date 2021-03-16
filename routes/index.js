@@ -2,6 +2,8 @@ var express = require("express");
 var router = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
+const dotenv = require('dotenv');
+dotenv.config({ path: `${__dirname}/config.env` });
 
 const nodemailer = require("nodemailer");
 const path = require("path");

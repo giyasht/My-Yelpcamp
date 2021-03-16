@@ -16,6 +16,9 @@ const nodemailer = require("nodemailer");
 const path = require("path");
 const exphbs = require("express-handlebars");
 
+const dotenv = require('dotenv');
+dotenv.config({ path: `${__dirname}/config.env` });
+
 // app.engine('handlebars',exphbs({ extname: "hbs", defaultLayout: false, layoutsDir: "views/ "}));
 
 //requiring routes
