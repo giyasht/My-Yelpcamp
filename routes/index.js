@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
-const dotenv = require('dotenv');
+const dotenv = require("dotenv");
 dotenv.config({ path: `${__dirname}/config.env` });
 
 const nodemailer = require("nodemailer");
@@ -21,11 +21,9 @@ router.get("/register", function (req, res) {
 });
 
 let transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
+  host: process.env.HOST,
   port: 465,
-  secure: true,
-  service: "Gmail",
-
+  secure: false,
   auth: {
     user: process.env.USERMAIL,
     pass: process.env.PASSWORD,
@@ -60,6 +58,9 @@ router.post("/register", function (req, res) {
   otp = parseInt(otp);
   console.log(otp);
   console.log(newUser);
+  console.log(process.env.USERMAIL);
+  console.log(process.env.PASSWORD);
+  console.log(process.env.PASSWORDKEY);
   User.register(newUser, req.body.password, function (err, user) {
     if (err) {
       req.flash("error", err.message);
@@ -70,11 +71,12 @@ router.post("/register", function (req, res) {
       lastname = req.body.lastname;
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-          return console.log(error);
+          console.log(error);
+        } else {
+          console.log("Message sent: %s", info.messageId);
+          console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+          res.render("otp");
         }
-        console.log("Message sent: %s", info.messageId);
-        console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-        res.render("otp");
       });
     });
   });
@@ -95,7 +97,7 @@ router.post("/resend", function (req, res) {
   var mailOptions = {
     to: email,
     subject: "OTP for YelpCamp",
-    html:"<h4>Otp for registration is </h4><br><em>" + otp + "</em>",
+    html: "<h4>Otp for registration is </h4><br><em>" + otp + "</em>",
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
