@@ -58,9 +58,6 @@ router.post("/register", function (req, res) {
   otp = parseInt(otp);
   console.log(otp);
   console.log(newUser);
-  console.log(process.env.USERMAIL);
-  console.log(process.env.PASSWORD);
-  console.log(process.env.PASSWORDKEY);
   User.register(newUser, req.body.password, function (err, user) {
     if (err) {
       req.flash("error", err.message);
