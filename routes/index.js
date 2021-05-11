@@ -21,12 +21,13 @@ router.get("/register", function (req, res) {
 });
 
 let transporter = nodemailer.createTransport({
-  host: process.env.HOST,
+  host: 'smtp.gmail.com',
   port: 465,
-  secure: false,
+  secure: true,
+  service: 'Gmail',
   auth: {
     user: process.env.USERMAIL,
-    pass: process.env.PASSWORD,
+    pass: process.env.PASSWORD ,
   },
 });
 
@@ -41,7 +42,8 @@ router.post("/register", function (req, res) {
       "<h3>OTP for account verification is </h3>" +
       "<h1 style='font-weight:bold;'>" +
       otp +
-      "</h1>", // html body
+      "</h1>" +
+      "<p>If you get the above OTP undefined then resend OTP. You will surely be able to get new OTP.</p>", // html body
   };
   email = req.body.useremail;
   var newUser = new User(
