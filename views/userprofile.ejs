@@ -2,7 +2,7 @@
 <div class="container">
     <header class="jumbotron">
         <div class="container">
-            <h3>Campgrounds Submitted by <%= user.firstname %> <%= user.lastname %></h3>
+            <h3>Locations Submitted by <%= user.firstname %> <%= user.lastname %></h3>
         </div>
     </header>
     <div class="row" style="display:flex; flex-wrap:wrap">
@@ -10,7 +10,7 @@
             <% if(campground.author.id.equals(user._id)) { %>
                 <div class="card col-md-3 col-sm-6">
                     <div class="thumbnail">
-                        <img class="card-img" src="<%= `uploads/${campground.images[0]}` %>" alt="Image unavailable" />
+                        <img class="card-img" src="<%= `${campground.images[0]}` %>" alt="Image unavailable" />
                         <div class="caption">
                             <h4>
                                 <%= campground.name %>

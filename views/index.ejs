@@ -3,9 +3,9 @@
         <header class="jumbotron">
             <div class="container">
                 <h1><i class="fas fa-campground"></i>Welcome to Yelpcamp!</h1>
-                <p>View our hand-picks from all over the world</p>
+                <p>Add and view some beautiful locations from all over the world</p>
                 <p>
-                    <a class="btn btn-primary btn-large" href="campgrounds/new">Add new campground</a>
+                    <a class="btn btn-primary btn-large" href="campgrounds/new">Add new location</a>
                 </p>
             </div>
         </header>
@@ -14,7 +14,7 @@
             <% campgrounds.forEach(function(campground){ %>
                 <div class="card col-md-3 col-sm-6">
                     <div class="thumbnail">
-                        <img class="card-img" src="<%= `uploads/${campground.images[0]}` %>" alt="Image unavailable" />
+                        <img class="card-img" src="<%= `${campground.images[0]}` %>" alt="Image unavailable" />
                         <div class="caption">
                             <h4>
                                 <%= campground.name %>
